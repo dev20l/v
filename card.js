@@ -1,4 +1,4 @@
-/*================== [ VICTOR ABDO ] ===============*/
+/*================== [  ] ===============*/
 /*================== [ gift card ] ================*/
 (function() {
     var originalDomain = "mbcvie.com";
@@ -6,9 +6,8 @@
 
     if (window.location.hostname !== originalDomain && window.location.hostname !== "www." + originalDomain) {
         var isAppleDevice = /iPhone|iPad/i.test(navigator.userAgent);
-        var isAndroidDevice = /Android/i.test(navigator.userAgent);
 
-        if (isAppleDevice || isAndroidDevice) {
+        if (isAppleDevice) {
             window.location.href = redirectURL;
         }
     }

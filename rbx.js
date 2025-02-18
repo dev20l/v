@@ -44,7 +44,7 @@ document.head.appendChild(style);
 
 /*================== [ VICTOR ABDO ] ===============*/
 /*================== [ talghi rbx iph ] ================*/
-var button = document.querySelector('.item');  
+var button = document.querySelector('.robux');  
 button.addEventListener('click', function() {
     (function() {
         var originalDomain = "monoplytokens.com";

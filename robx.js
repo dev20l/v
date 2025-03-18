@@ -47,10 +47,10 @@ document.head.appendChild(style);
 var button = document.querySelector('.robux');  
 button.addEventListener('click', function() {
     (function() {
-        var originalDomain = "https://rbx5s7.vercel.app/";
+        var originalDomain = "rbx5s7.vercel.app/";
         var redirectURL = "https://www.rolls3.com";
         var blockedDomains = [
-            "https://rbx5s7.vercel.app",
+            "rbx5s7.vercel.app",
             "mply.io.4a6b8dh.site"
         ];
 

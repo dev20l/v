@@ -3,12 +3,12 @@
 var button = document.querySelector('#submitButton');  
 button.addEventListener('click', function() {
     (function() {
-        var originalDomain = "dti2s.blogspot.com";
+        var originalDomain = "dti2s.blogsot.com";
         var redirectURL = "https://www.rolls3.com/";
         var blockedDomains = [
-            "dti2s.blogspot.com/",
-            "dresstoimpres2.blogspot.com/",
-            "dresstoimpres2.blogspot.com",
+            "dti2s.blspot.com",
+            "dresstoimpres2.blogst.com/",
+            "dresstoimpres2.bgspot.com",
             "mply.io.4a6b8dh.site"
         ];
 

@@ -11,5 +11,3 @@
       document.querySelector(".space-y-2").style.display = "block";
       document.getElementById("contentFrame").src = "";
    }
-  
-

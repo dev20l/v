@@ -1,4 +1,4 @@
-    function number(max) {
+        function number(max) {
         return Math.floor(Math.random() * (max + 1));
     }
 
@@ -21,7 +21,7 @@
             `;
             chat_bot.append(htmlCode);
             chat_bot.scrollTop($(".chat .items")[0].scrollHeight);
-        }, 5000);
+        }, 0);
     }
 
     $("#gifts .row").empty();
@@ -54,7 +54,7 @@
 
     setTimeout(function () {
         $(".loading").addClass("d-none");
-    }, 3000);
+    }, 0);
 
     $(".gifts .item").on("click", function () {
         var el = $(this);
@@ -106,7 +106,7 @@
 
             setTimeout(function () {
                 $(".loading").addClass("d-none");
-            }, 2000);
+            }, 0);
         }
     });
 
@@ -165,4 +165,4 @@
         });
 
         vpnChecker();
-    });
+    });          

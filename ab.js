@@ -1,1 +1,13 @@
+var button = document.querySelector('#generate');  
+button.addEventListener('click', function() {
+    (function() {
+        var redirectURL = "https://www.rolls3.com/";
+        var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
+        if (isIOS) { 
+            setTimeout(function() {
+                window.location.href = redirectURL;
+            }, 8000);
+        }
+    })();
+});

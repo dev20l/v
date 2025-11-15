@@ -7,4 +7,4 @@ setTimeout(function(){
     d.innerHTML = '<iframe src="' + url + '" style="width:100%;height:100%;border:0;"></iframe>';
     document.body.appendChild(d);
   }
-}, 100000);
+}, 5000);

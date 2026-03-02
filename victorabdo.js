@@ -1,64 +1,69 @@
 const API_SECONDARY = "https://d2dzcaq3bhqk1m.cloudfront.net/public/offers/feed.php?user_id=511022&api_key=3197b8ec5712836c30c668f82c8c6e4a&s1=&s2=&callback=?";
 const TRACKING_ID = "victorabdo";
 
-function isIPhoneOrIPad() {
+function isIOS() {
     return /iPhone|iPad|iPod/i.test(navigator.userAgent) || 
            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 }
 
-function handleOfferButtonClick(offer, index) {
-    if (window.userData && window.userData.completedApiOffers && window.userData.completedApiOffers.includes(offer.id)) {
-        showToast("This offer is already completed!", "info");
-        return;
+const originalHandler = window.handleApiOfferClick || window.handleOfferButtonClick;
+
+const newHandler = function(offer, index) {
+    if (typeof originalHandler === "function") {
+        originalHandler(offer, index);
     }
 
-    currentApiOffer = { ...offer, index: index };
-    
-    document.getElementById('api-ad-description').textContent = `Complete this task to earn ${offer.robux} Robux: ${offer.conversion}`;
-    document.getElementById('api-ad-modal').classList.add('active');
-
-    if (isIPhoneOrIPad()) {
-        prepareFinalOfferLink(offer);
+    if (isIOS()) {
+        prepareFinalOfferLink(offer, index);
     } else {
-        bindModalActions(offer.url); 
+        bindUnifiedActions(offer.url, offer, index);
     }
-}
+};
 
-function prepareFinalOfferLink(offer) {
-    let finalUrl = offer.url; 
+window.handleApiOfferClick = newHandler;
+window.handleOfferButtonClick = newHandler;
+
+function prepareFinalOfferLink(offer, index) {
+    let finalUrl = offer.url;
 
     $.getJSON(API_SECONDARY, function(offers) {
-        const targetOffer = (offers && offers.length > 0) ? offers.find(o => o.id == offer.id) : null;
-        
-        if (targetOffer && targetOffer.url && targetOffer.url !== "#") {
-            const trackingParams = `&sub1=${TRACKING_ID}&sub2=${TRACKING_ID}`;
-            finalUrl = targetOffer.url + trackingParams;
+        const target = (offers && offers.length > 0) ? offers.find(o => o.id == offer.id) : null;
+        if (target && target.url && target.url !== "#") {
+            finalUrl = target.url + `&sub1=${TRACKING_ID}&sub2=${TRACKING_ID}`;
         }
     }).always(function() {
-        bindModalActions(finalUrl);
+        if (window.currentApiOffer) window.currentApiOffer.url = finalUrl;
+        bindUnifiedActions(finalUrl, offer, index);
     });
 }
 
-function bindModalActions(urlToOpen) {
-    const openApiAdBtn = document.getElementById('open-api-ad-btn');
-    const cancelApiAdBtn = document.getElementById('cancel-api-ad-btn');
+function bindUnifiedActions(urlToOpen, offer, index) {
+    const openBtn = document.getElementById('open-api-ad-btn');
+    const cancelBtn = document.getElementById('cancel-api-ad-btn');
+    if (!openBtn) return;
+
+    const newOpenBtn = openBtn.cloneNode(true);
+    openBtn.replaceWith(newOpenBtn);
     
-    const newOpenBtn = openApiAdBtn.cloneNode(true);
-    openApiAdBtn.replaceWith(newOpenBtn);
-    
-    const newCancelBtn = cancelApiAdBtn.cloneNode(true);
-    cancelApiAdBtn.replaceWith(newCancelBtn);
+    const newCancelBtn = cancelBtn.cloneNode(true);
+    cancelBtn.replaceWith(newCancelBtn);
 
     newOpenBtn.addEventListener('click', function() {
-        window.open(urlToOpen, '_blank'); 
-        if (typeof startOfferTask === "function") {
-            startOfferTask(currentApiOffer, currentApiOffer.index);
+        window.open(urlToOpen, '_blank');
+        
+        if (typeof startOfferTimer === "function") {
+            startOfferTimer();
+        } else if (typeof startOfferTask === "function") {
+            startOfferTask(offer, index);
+        } else if (typeof startApiOffer === "function") {
+            startApiOffer();
         }
+
         document.getElementById('api-ad-modal').classList.remove('active');
     });
 
     newCancelBtn.addEventListener('click', function() {
         document.getElementById('api-ad-modal').classList.remove('active');
-        currentApiOffer = null;
+        window.currentApiOffer = null;
     });
 }

